@@ -6,7 +6,7 @@
       <!-- for logged in users -->
       <div>
         <router-link to="/">Home</router-link>
-        <button>Logout</button>
+        <button @click="handleLogout">Logout</button>
       </div>
 
       <!-- for logged out users -->
@@ -19,7 +19,22 @@
 </template>
 
 <script>
-export default {};
+import { signOut } from "@firebase/auth";
+import { useRouter } from "vue-router";
+import { auth } from "../firebase/config";
+
+export default {
+  setup() {
+    const router = useRouter();
+
+    const handleLogout = () => {
+      signOut(auth);
+      router.push({ name: "Login" });
+    };
+
+    return { handleLogout };
+  },
+};
 </script>
 
 <style>
