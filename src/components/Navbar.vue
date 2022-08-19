@@ -8,7 +8,7 @@
         <router-link to="/">Home</router-link>
         <button>Logout</button>
       </div>
-      
+
       <!-- for logged out users -->
       <div>
         <router-link to="/login">Login</router-link>
@@ -19,9 +19,7 @@
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>
 
 <style>

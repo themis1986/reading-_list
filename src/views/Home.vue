@@ -16,21 +16,32 @@
 </template>
 
 <script>
-import { ref } from 'vue'
-import CreateBookForm from '@/components/CreateBookForm'
+import CreateBookForm from "@/components/CreateBookForm";
+import { ref } from "vue";
 
 export default {
-  name: 'Home',
+  name: "Home",
   components: { CreateBookForm },
+
   setup() {
     const books = ref([
-      { title: 'name of the wind', author: 'patrick rothfuss', isFav: false, id: '1' },
-      { title: 'the way of kings', author: 'brandon sanderson', isfav: false, id: '2' }
-    ])
+      {
+        title: "name of the wind",
+        author: "patrick rothfuss",
+        isFav: false,
+        id: "1",
+      },
+      {
+        title: "the way of kings",
+        author: "brandon sanderson",
+        isfav: false,
+        id: "2",
+      },
+    ]);
 
-    return { books }
-  }
-}
+    return { books };
+  },
+};
 </script>
 
 <style>

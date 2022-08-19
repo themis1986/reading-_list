@@ -6,11 +6,11 @@
 </template>
 
 <script>
-import Navbar from './components/Navbar.vue'
+import Navbar from "./components/Navbar.vue";
 
 export default {
-  components: { Navbar }
-}
+  components: { Navbar },
+};
 </script>
 
 <style>
@@ -27,7 +27,8 @@ body {
   max-width: 560px;
   margin: 0 auto;
 }
-form label, form input {
+form label,
+form input {
   display: block;
 }
 form input {

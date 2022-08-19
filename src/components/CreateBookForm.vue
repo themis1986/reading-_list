@@ -3,30 +3,30 @@
     <h3>Add a New Book</h3>
 
     <label for="title">Book title:</label>
-    <input type="text" name="title" v-model="title" required>
+    <input type="text" name="title" v-model="title" required />
 
     <label for="author">Book author:</label>
-    <input type="text" name="author" v-model="author" required>
+    <input type="text" name="author" v-model="author" required />
 
     <button>Add Book</button>
   </form>
 </template>
 
 <script>
-import { ref } from 'vue'
+import { ref } from "vue";
 
 export default {
   setup() {
-    const title = ref('')
-    const author = ref('')
+    const title = ref("");
+    const author = ref("");
 
     const handleSubmit = async () => {
-      console.log(title.value, author.value)
-    }
+      console.log(title.value, author.value);
+    };
 
-    return { handleSubmit, title, author }
-  }
-}
+    return { handleSubmit, title, author };
+  },
+};
 </script>
 
 <style>
