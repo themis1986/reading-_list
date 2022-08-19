@@ -9,22 +9,31 @@
     <input type="password" name="password" v-model="password" required />
 
     <button>Login</button>
+    <div v-if="error">{{ error }}</div>
   </form>
 </template>
 
 <script>
 import { ref } from "vue";
+import { useRouter } from "vue-router";
+import useLogin from "../composables/useLogin";
 
 export default {
   setup() {
     const email = ref("");
     const password = ref("");
 
+    const { error, isPending, login } = useLogin();
+    const router = useRouter();
+
     const handleSubmit = async () => {
-      console.log(email.value, password.value);
+      await login(email.value, password.value);
+      if (!error.value) {
+        router.push({ name: "Home" });
+      }
     };
 
-    return { email, password, handleSubmit };
+    return { email, password, error, isPending, handleSubmit };
   },
 };
 </script>
